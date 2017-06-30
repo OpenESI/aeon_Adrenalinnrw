@@ -2917,35 +2917,7 @@ MultiContentEntryPixmapAlphaTest(pos = (10, 6), size = (48, 48), png = 3), # ind
     <ePixmap pixmap="AeonMOD_Adrenalinnrw/buttons/buttons.png" position="224,602" size="396,20" alphatest="blend" />
     <widget name="config" position="243,163" size="801,345" scrollbarMode="showOnDemand" backgroundColor="bpPodloga" transparent="1" />
   </screen>
-  <screen name="AltCamManager" position="0,0" size="1280,720" title="SoftCam manager" backgroundColor="transparent" flags="wfNoBorder">
-    <widget source="Title" render="Label" position="218,78" size="844,57" zPosition="2" halign="center" font="Replacement; 26" foregroundColor="un21e2e2e2" backgroundColor="bpPodloga" transparent="1" valign="center" />
-    <ePixmap name="bPPodloga" position="193,60" size="894,600" pixmap="AeonMOD_Adrenalinnrw/background/back_mon_empty.png" zPosition="-3" />
-    <ePixmap name="box_slika" position="233,154" size="822,427" pixmap="AeonMOD_Adrenalinnrw/background/box.png" zPosition="-2" transparent="0" borderWidth="1" borderColor="background2" />
-    <widget source="key_red" render="Label" position="251,580" size="180,66" zPosition="1" font="Regular; 20" halign="left" valign="center" backgroundColor="bpPodloga" transparent="1" />
-    <widget source="key_green" render="Label" position="461,580" size="180,66" zPosition="1" font="Regular; 20" halign="left" valign="center" backgroundColor="bpPodloga" transparent="1" />
-    <widget source="key_yellow" render="Label" position="676,580" size="180,66" zPosition="1" font="Regular; 20" halign="left" valign="center" backgroundColor="bpPodloga" transparent="1" />
-    <widget source="key_blue" render="Label" position="891,580" size="180,66" zPosition="1" font="Regular; 20" halign="left" valign="center" backgroundColor="bpPodloga" transparent="1" />
-    <ePixmap pixmap="AeonMOD_Adrenalinnrw/buttons/buttons.png" position="224,602" size="681,20" alphatest="blend" />
-    <widget source="session.CurrentService" render="Label" position="-424,546" zPosition="2" size="400,30" font="Regular;26" halign="left" foregroundColor="yellow" backgroundColor="black" transparent="1" name="SATELIT">
-      <convert type="FNCsvcName">%S %s</convert>
-    </widget>
-    <eLabel position="652,161" size="395,38" halign="center" font="Replacement; 24" foregroundColor="un21e2e2e2" transparent="0" noWrap="1" backgroundColor="bpPodloga" valign="center" text=" Ecm Info" />
-    <eLabel position="241,161" size="395,38" halign="center" font="Replacement; 24" foregroundColor="un21e2e2e2" transparent="0" noWrap="1" backgroundColor="bpPodloga" valign="center" text=" Cam Selection" />
-    <eLabel position="5,0" size="620,2" backgroundColor="black" />
-    <widget source="list" render="Listbox" position="243,209" size="395,358" scrollbarMode="showNever" transparent="1" selectionPixmap="AeonMOD_Adrenalinnrw/selections/sel_1100x70.png">
-      <convert type="TemplatedMultiContent">
-					{
-						"template": [MultiContentEntryPixmapAlphaTest(pos=(5, 5), size=(51, 40), png=1), 
-							MultiContentEntryText(pos=(65, 10), size=(650, 40), font=0, flags=RT_HALIGN_LEFT, text=0), 
-							MultiContentEntryText(pos=(5, 25), size=(51, 16), font=1, flags=RT_HALIGN_CENTER, text=2),],
-						"fonts": [gFont("Regular", 24), gFont("Regular", 12)],
-						"itemHeight": 50
-					}
-    </convert>
-    </widget>
-    <widget name="status" position="652,209" zPosition="4" size="395,359" font="Regular; 18" foregroundColor="un21e2e2e2" backgroundColor="bpPodloga" transparent="1" halign="left" />
-  </screen>
-  <screen name="powerboardCenter" position="center,center" size="1280,720" title="Powerboard Center" flags="wfNoBorder" backgroundColor="transparent">
+ <screen name="powerboardCenter" position="center,center" size="1280,720" title="Powerboard Center" flags="wfNoBorder" backgroundColor="transparent">
     <widget name="menu" position="53,105" size="240,550" scrollbarMode="showNever" backgroundColor="bpPodloga" transparent="1" zPosition="10" halign="right" itemHeight="60" selectionPixmap="AeonMOD_Adrenalinnrw/menu/Menu_Selection.png" />
     <widget source="Title" render="Label" position="628,5" size="512,24" zPosition="2" halign="right" font="Replacement; 20" foregroundColor="un21e2e2e2" backgroundColor="bpPodloga" transparent="1" valign="center" />
     <widget source="VersionPB" render="Label" position="1140,6" size="77,24" font="Replacement; 20" backgroundColor="bpPodloga" transparent="1" zPosition="10" halign="right" text="v5.6.3" />
@@ -4195,24 +4167,51 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (100, 40), png = 2),
     <widget name="list" position="246,163" zPosition="2" size="790,400" scrollbarMode="showOnDemand" />
     <ePixmap name="bPPodloga" position="193,60" size="894,600" pixmap="AeonMOD_Adrenalinnrw/background/back_mon.png" zPosition="-3" />
   </screen>
-  <screen name="SoftcamSetup" position="0,0" size="1280,720" title="SoftcamSetup" flags="wfNoBorder" backgroundColor="transparent">
-    <widget name="config" position="240,161" size="620,200" scrollbarMode="showOnDemand" />
-    <widget name="info" position="240,368" size="620,200" font="Regular;18" transparent="1" />
-    <eLabel name="OpenPLI SoftCams Panel" position="218,78" size="844,57" zPosition="2" halign="center" font="Replacement; 26" foregroundColor="cyan1" backgroundColor="bpPodloga" transparent="1" valign="center" />
-    <eLabel text="Cancel" position="251,580" size="180,66" zPosition="1" font="Regular; 20" halign="left" valign="center" backgroundColor="bpPodloga" transparent="1" />
-    <eLabel text="Ok" position="461,580" size="180,66" zPosition="1" font="Regular; 20" halign="left" valign="center" backgroundColor="bpPodloga" transparent="1" />
-    <ePixmap name="bPPodloga" position="193,60" size="894,600" pixmap="AeonMOD_Adrenalinnrw/background/back_mon.png" zPosition="-3" />
-    <ePixmap pixmap="AeonMOD_Adrenalinnrw/buttons/buttons.png" position="224,602" size="420,20" alphatest="blend" />
+  <screen name="SoftcamPanel" position="center,center" size="800,601" title="SoftcamPanel" backgroundColor="transparent" flags="wfNoBorder">
+    <ePixmap position="0,-2" size="800,601" zPosition="-1" pixmap="AeonMOD_Adrenalinnrw/menu/menu_bg6.png" />
+    <widget name="config" font="Regular;20" position="50,70" size="700,100" enableWrapAround="1" scrollbarMode="showOnDemand" backgroundColor="background" zPosition="1" transparent="1" />
+    <widget name="actifcam" font="Regular;20" position="70,184" size="300,32" transparent="1" />
+    <widget name="actifcam2" font="Regular;20" position="400,184" size="300,32" transparent="1" />
+    <widget name="ecminfo" font="Regular;20" position="49,233" size="700,300" transparent="1" />
+    <ePixmap pixmap="AeonMOD_Adrenalinnrw/buttons/red.png" position="0,553" size="50,30" alphatest="on" />
+    <ePixmap pixmap="AeonMOD_Adrenalinnrw/buttons/green.png" position="201,553" size="50,30" alphatest="on" />
+    <ePixmap pixmap="AeonMOD_Adrenalinnrw/buttons/yellow.png" position="398,553" size="50,30" alphatest="on" />
+    <ePixmap pixmap="AeonMOD_Adrenalinnrw/buttons/blue.png" position="597,553" size="50,30" alphatest="on" />
+    <widget name="key_red" position="48,550" zPosition="1" size="150,30" font="Regular;24" halign="left" backgroundColor="background" transparent="1" />
+    <widget name="key_green" position="248,550" zPosition="1" size="150,30" font="Regular;24" halign="left" backgroundColor="background" transparent="1" />
+    <widget name="key_yellow" position="445,550" zPosition="1" size="150,30" font="Regular;24" halign="left" backgroundColor="background" transparent="1" />
+    <widget name="key_blue" position="645,550" zPosition="1" size="150,30" font="Regular;24" halign="left" backgroundColor="background" transparent="1" />
+    <eLabel name="" position="157,10" size="500,40" transparent="1" zPosition="2" text="Softcam Panel" halign="center" font="Regular; 35" foregroundColor="cyan1" />
   </screen>
-  <screen name="ScSelection" position="0,0" size="1280,720" title="ScSelection" flags="wfNoBorder" backgroundColor="transparent">
-    <widget name="entries" position="295,164" size="690,400" scrollbarMode="showOnDemand" transparent="1" />
-    <eLabel name="OpenPLI SoftCams Panel" position="218,78" size="844,57" zPosition="2" halign="center" font="Replacement; 26" foregroundColor="cyan1" backgroundColor="bpPodloga" transparent="1" valign="center" />
-    <eLabel text="Cancel" position="251,580" size="180,66" zPosition="1" font="Regular; 20" halign="left" valign="center" backgroundColor="bpPodloga" transparent="1" />
-    <eLabel text="Ok" position="461,580" size="180,66" zPosition="1" font="Regular; 20" halign="left" valign="center" backgroundColor="bpPodloga" transparent="1" />
-    <ePixmap name="bPPodloga" position="193,60" size="894,600" pixmap="AeonMOD_Adrenalinnrw/background/back_mon.png" zPosition="-3" />
-    <ePixmap pixmap="AeonMOD_Adrenalinnrw/buttons/buttons.png" position="224,602" size="420,20" alphatest="blend" />
+  <screen name="SoftcamSetup" position="center,center" size="800,601" title="SoftcamSetup" backgroundColor="transparent" flags="wfNoBorder">
+    <ePixmap position="0,-2" size="800,601" zPosition="-1" pixmap="AeonMOD_Adrenalinnrw/menu_bg6.png" />
+    <widget name="config" position="84,64" size="620,150" scrollbarMode="showOnDemand" transparent="1" />
+    <widget name="info" position="84,228" size="620,300" font="Regular;18" transparent="1" />
+    <ePixmap pixmap="AeonMOD_Adrenalinnrw/buttons/red.png" position="0,553" size="100,18" alphatest="on" />
+    <ePixmap pixmap="AeonMOD_Adrenalinnrw/buttons/green.png" position="201,553" size="100,20" alphatest="on" />
+    <ePixmap pixmap="AeonMOD_Adrenalinnrw/buttons/yellow.png" position="398,553" size="100,21" alphatest="on" />
+    <ePixmap pixmap="AeonMOD_Adrenalinnrw/buttons/blue.png" position="597,553" size="100,20" alphatest="on" />
+    <widget name="key_red" position="48,550" zPosition="1" size="150,30" font="Regular;24" halign="left" backgroundColor="background" transparent="1" />
+    <widget name="key_green" position="248,550" zPosition="1" size="150,30" font="Regular;24" halign="left" backgroundColor="background" transparent="1" />
+    <widget name="key_yellow" position="445,550" zPosition="1" size="150,30" font="Regular;24" halign="left" backgroundColor="background" transparent="1" />
+    <widget name="key_blue" position="645,550" zPosition="1" size="150,30" font="Regular;24" halign="left" backgroundColor="background" transparent="1" />
+    <eLabel name="" position="157,10" size="500,40" transparent="1" zPosition="2" text="Softcam Panel" halign="center" font="Regular; 35" foregroundColor="cyan1" />
   </screen>
-<screen name="EsiPanel" position="0,0" size="1280,720" title="EsiPanel" flags="wfNoBorder" backgroundColor="transparent">
+  <screen name="ScSelection" position="center,center" size="800,601" title="SoftcamSetup" backgroundColor="transparent" flags="wfNoBorder">
+    <ePixmap position="0,-2" size="800,601" zPosition="-1" pixmap="AeonMOD_Adrenalinnrw/menu_bg6.png" />
+    <widget name="entries" position="84,64" size="620,150" scrollbarMode="showOnDemand" transparent="1" />
+    <widget name="info" position="84,228" size="620,300" font="Regular;18" transparent="1" />
+    <ePixmap pixmap="AeonMOD_Adrenalinnrw/buttons/red.png" position="0,553" size="100,18" alphatest="on" />
+    <ePixmap pixmap="AeonMOD_Adrenalinnrw/buttons/green.png" position="201,553" size="100,20" alphatest="on" />
+    <ePixmap pixmap="AeonMOD_Adrenalinnrw/buttons/yellow.png" position="398,553" size="100,21" alphatest="on" />
+    <ePixmap pixmap="AeonMOD_Adrenalinnrw/buttons/blue.png" position="597,553" size="100,20" alphatest="on" />
+    <widget name="key_red" position="48,550" zPosition="1" size="150,30" font="Regular;24" halign="left" backgroundColor="background" transparent="1" />
+    <widget name="key_green" position="248,550" zPosition="1" size="150,30" font="Regular;24" halign="left" backgroundColor="background" transparent="1" />
+    <widget name="key_yellow" position="445,550" zPosition="1" size="150,30" font="Regular;24" halign="left" backgroundColor="background" transparent="1" />
+    <widget name="key_blue" position="645,550" zPosition="1" size="150,30" font="Regular;24" halign="left" backgroundColor="background" transparent="1" />
+    <eLabel name="" position="157,10" size="500,40" transparent="1" zPosition="2" text="Softcam Panel" halign="center" font="Regular; 35" foregroundColor="cyan1" />
+  </screen>
+  <screen name="EsiPanel" position="0,0" size="1280,720" title="EsiPanel" flags="wfNoBorder" backgroundColor="transparent">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="AeonMOD_Adrenalinnrw/menu/menu_bg5.png" />
     <ePixmap position="48,160" size="650,450" zPosition="5" pixmap="AeonMOD_Adrenalinnrw/uplist.png" alphatest="blend" transparent="1" />
     <ePixmap position="754,184" size="483,444" zPosition="2" pixmap="AeonMOD_Adrenalinnrw/esilogoBIG.png" alphatest="blend" transparent="1" />
