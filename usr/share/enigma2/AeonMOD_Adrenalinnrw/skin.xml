@@ -132,14 +132,14 @@
     <color name="WindowTitleForeground" color="white" />
     <color name="WindowTitleBackground" color="transpGrey" />
     <borderset name="bsWindow">
-      <pixmap pos="bpTopLeft" filename="AeonMOD_Adrenalinnrw/window/bs_tl.png" />
-      <pixmap pos="bpTop" filename="AeonMOD_Adrenalinnrw/window/bs_t.png" />
-      <pixmap pos="bpTopRight" filename="AeonMOD_Adrenalinnrw/window/bs_tr.png" />
-      <pixmap pos="bpLeft" filename="AeonMOD_Adrenalinnrw/window/bs_l.png" />
-      <pixmap pos="bpRight" filename="AeonMOD_Adrenalinnrw/window/bs_r.png" />
-      <pixmap pos="bpBottomLeft" filename="AeonMOD_Adrenalinnrw/window/bs_bl.png" />
-      <pixmap pos="bpBottom" filename="AeonMOD_Adrenalinnrw/window/bs_b.png" />
-      <pixmap pos="bpBottomRight" filename="AeonMOD_Adrenalinnrw/window/bs_br.png" />
+      <pixmap pos="bpTopLeft" filename="AeonMOD_Adrenalinnrw/window/b_tl_shadow.png" />
+      <pixmap pos="bpTop" filename="AeonMOD_Adrenalinnrw/window/b_t_shadow.png" />
+      <pixmap pos="bpTopRight" filename="AeonMOD_Adrenalinnrw/window/b_tr_shadow.png" />
+      <pixmap pos="bpLeft" filename="AeonMOD_Adrenalinnrw/window/b_l_shadow.png" />
+      <pixmap pos="bpRight" filename="AeonMOD_Adrenalinnrw/window/b_r_shadow.png" />
+      <pixmap pos="bpBottomLeft" filename="AeonMOD_Adrenalinnrw/window/b_bl_shadow.png" />
+      <pixmap pos="bpBottom" filename="AeonMOD_Adrenalinnrw/window/b_b_shadow.png" />
+      <pixmap pos="bpBottomRight" filename="AeonMOD_Adrenalinnrw/window/b_br_shadow.png" />
     </borderset>
     <borderset name="bsListboxEntry">
       <pixmap pos="bpTop" filename="AeonMOD_Adrenalinnrw/other/h-white.png" />
@@ -161,159 +161,246 @@
     <color name="WindowTitleBackground" color="black" />
   </windowstyle>
   <screen name="InfoBar" flags="wfNoBorder" position="0,0" size="1280,720" title="Open Pli" backgroundColor="transparent">
-  <widget source="session.Event_Now" render="Label" position="20,609" size="95,35" halign="left" font="Regular; 24" backgroundColor="bpPodloga" transparent="1" valign="center" foregroundColor="cyan">
-    <convert type="EventTime">StartTime</convert>
-    <convert type="ClockToText">Format:%H:%M</convert>
-  </widget>
-  <widget source="session.Event_Next" render="Label" borderWidth="2" position="87,658" size="456,30" halign="left" font="Ado; 22" foregroundColor="grey" backgroundColor="black" transparent="1" valign="center" noWrap="1">
-    <convert type="EventName">Name</convert>
-  </widget>
-  <widget source="session.Event_Now" render="Label" borderWidth="2" position="83,606" size="380,40" halign="left" font="Ado; 22" transparent="1" noWrap="1" backgroundColor="black" valign="center" zPosition="1" foregroundColor="bpExtra">
-    <convert type="EventName">Name</convert>
-  </widget>
-  <widget source="session.Event_Now" render="Label" position="428,606" size="110,40" halign="right" font="Regular; 20" foregroundColor="un21e2e2e2" backgroundColor="bpWindowTraka" transparent="1" valign="center" zPosition="1">
-    <convert type="EventTime">Remaining</convert>
-    <convert type="RemainingToText">InMinutes</convert>
-  </widget>
-  <widget source="session.CurrentService" render="Picon" position="569,580" size="170,100" transparent="1" alphatest="blend" zPosition="10">
-    <convert type="ServiceName">Reference</convert>
-  </widget>
-  <widget source="session.RecordState" render="Pixmap" position="630,522" size="48,48" pixmap="AeonMOD_Adrenalinnrw/infobar/recording.png" alphatest="blend">
-    <convert type="ConditionalShowHide">Blink</convert>
-  </widget>
-  <ePixmap name="bPPodloga" position="0,0" size="1282,720" pixmap="AeonMOD_Adrenalinnrw/infobar/infobar.png" zPosition="-3" alphatest="off" transparent="1" />
-  <ePixmap position="19,639" size="520,19" zPosition="5" pixmap="AeonMOD_Adrenalinnrw/infobar/infobar_event_slider_back1.png" alphatest="blend" transparent="1" />
-  <widget source="session.CurrentService" render="Label" position="20,573" borderWidth="2" size="515,36" font="Ado; 30" backgroundColor="black" transparent="1" halign="left" foregroundColor="un11b7b7b7" zPosition="0" valign="top" noWrap="1">
-    <convert type="ServiceName">Name</convert>
-  </widget>
-  <eLabel name="" position="20,657" size="119,32" text="Next:" halign="left" font="Regular; 24" transparent="1" noWrap="1" backgroundColor="bpPodloga" valign="center" foregroundColor="cyan" />
-  <widget backgroundColor="black" borderWidth="2" font="Ado; 22" halign="right" valign="top" noWrap="1" position="973,660" render="Label" size="290,26" source="session.CurrentService" transparent="1" zPosition="7">
-    <convert type="ServiceName">Provider</convert>
-  </widget>
-  <eLabel text="SNR:" position="765,612" size="54,30" font="Ado; 18" backgroundColor="bpPodloga" transparent="1" />
-  <eLabel text="AGC:" position="765,636" size="54,30" font="Ado; 18" backgroundColor="bpPodloga" transparent="1" />
-  <widget source="session.FrontendStatus" render="Label" position="805,612" size="100,30" font="Ado; 18" backgroundColor="bpPodloga" transparent="1" zPosition="1">
-    <convert type="FrontendInfo">SNR</convert>
-  </widget>
-  <widget source="session.FrontendStatus" render="Label" position="805,636" size="100,30" font="Ado; 18" backgroundColor="bpPodloga" transparent="1" zPosition="1">
-    <convert type="FrontendInfo">AGC</convert>
-  </widget>
-  <widget zPosition="20" size="80,40" position="954,620" alphatest="blend" pixmap="AeonMOD_Adrenalinnrw/icons/2.0.png" render="Pixmap" source="session.CurrentService">
-    <convert type="ServiceInfo">IsStereo</convert>
-    <convert type="ConditionalShowHide" />
-  </widget>
-  <widget zPosition="20" size="80,40" position="954,620" alphatest="blend" pixmap="AeonMOD_Adrenalinnrw/icons/5.1.png" render="Pixmap" source="session.CurrentService">
-    <convert type="ServiceInfo">IsMultichannel</convert>
-    <convert type="ConditionalShowHide" />
-  </widget>
-  <widget zPosition="20" size="80,40" position="1034,620" alphatest="blend" pixmap="AeonMOD_Adrenalinnrw/icons/h264.png" render="Pixmap" source="session.CurrentService">
-    <convert type="ServiceInfo">IsHD</convert>
-    <convert type="ConditionalShowHide" />
-  </widget>
-  <widget zPosition="20" size="80,40" position="1034,620" alphatest="blend" pixmap="AeonMOD_Adrenalinnrw/icons/mpeg2.png" render="Pixmap" source="session.CurrentService">
-    <convert type="ServiceInfo">IsSD</convert>
-    <convert type="ConditionalShowHide" />
-  </widget>
-  <widget zPosition="20" size="80,40" position="1114,620" alphatest="blend" pixmap="AeonMOD_Adrenalinnrw/icons/169.png" render="Pixmap" source="session.CurrentService">
-    <convert type="ServiceInfo">IsWidescreen</convert>
-    <convert type="ConditionalShowHide" />
-  </widget>
-  <widget zPosition="20" size="80,40" position="1114,620" alphatest="blend" pixmap="AeonMOD_Adrenalinnrw/icons/43.png" render="Pixmap" source="session.CurrentService">
-    <convert type="ServiceInfo">IsNotWidescreen</convert>
-    <convert type="ConditionalShowHide" />
-  </widget>
-  <widget zPosition="20" size="80,40" position="1194,620" alphatest="blend" pixmap="AeonMOD_Adrenalinnrw/icons/1080.png" render="Pixmap" source="session.CurrentService">
-    <convert type="ServiceInfo">Is1080</convert>
-    <convert type="ConditionalShowHide" />
-  </widget>
-  <widget zPosition="20" size="80,40" position="1194,620" alphatest="blend" pixmap="AeonMOD_Adrenalinnrw/icons/720.png" render="Pixmap" source="session.CurrentService">
-    <convert type="ServiceInfo">Is720</convert>
-    <convert type="ConditionalShowHide" />
-  </widget>
-  <widget zPosition="20" size="80,40" position="1194,620" alphatest="blend" pixmap="AeonMOD_Adrenalinnrw/icons/576.png" render="Pixmap" source="session.CurrentService">
-    <convert type="ServiceInfo">Is576</convert>
-    <convert type="ConditionalShowHide" />
-  </widget>
-  <eLabel text="A" position="616,691" zPosition="1" size="20,24" font="Regular; 19" halign="center" backgroundColor="bpPodloga" transparent="1" valign="center" foregroundColor="un21e2e2e2" />
-  <eLabel text="B" position="642,691" zPosition="1" size="20,24" font="Regular; 19" halign="center" backgroundColor="bpPodloga" transparent="1" valign="center" foregroundColor="un21e2e2e2" />
-  <eLabel text="C" position="667,691" zPosition="1" size="20,24" font="Regular; 19" halign="center" backgroundColor="bpPodloga" transparent="1" valign="center" foregroundColor="un21e2e2e2" />
-  <widget source="session.TunerInfo" render="FixedLabel" text="A" position="616,691" zPosition="2" size="20,24" font="Regular; 19" halign="center" backgroundColor="bpPodloga" transparent="1" valign="center" foregroundColor="un21e2e2e2">
-    <convert type="TunerInfo">TunerUseMask</convert>
-    <convert type="ValueBitTest">1</convert>
-    <convert type="ConditionalShowHide" />
-  </widget>
-  <widget source="session.TunerInfo" render="FixedLabel" text="B" position="642,691" zPosition="2" size="20,24" font="Regular; 19" halign="center" backgroundColor="bpPodloga" transparent="1" valign="center" foregroundColor="un21e2e2e2">
-    <convert type="TunerInfo">TunerUseMask</convert>
-    <convert type="ValueBitTest">2</convert>
-    <convert type="ConditionalShowHide" />
-  </widget>
-  <widget source="session.TunerInfo" render="FixedLabel" text="C" position="667,691" zPosition="2" size="20,24" font="Regular; 19" halign="center" backgroundColor="bpPodloga" transparent="1" valign="center" foregroundColor="un21e2e2e2">
-    <convert type="TunerInfo">TunerUseMask</convert>
-    <convert type="ValueBitTest">4</convert>
-    <convert type="ConditionalShowHide" />
-  </widget>
-  <widget source="session.FrontendInfo" render="FixedLabel" position="616,712" zPosition="3" size="20,3" font="Regular; 22" halign="center" foregroundColor="un21e2e2e2" backgroundColor="bpExtra" transparent="0" valign="top">
-    <convert type="FrontendInfo">NUMBER</convert>
-    <convert type="ValueRange">0,0</convert>
-    <convert type="ConditionalShowHide" />
-  </widget>
-  <widget source="session.FrontendInfo" render="FixedLabel" position="642,712" zPosition="3" size="20,3" font="Regular; 20" halign="center" foregroundColor="un21e2e2e2" backgroundColor="bpExtra" transparent="0" valign="top">
-    <convert type="FrontendInfo">NUMBER</convert>
-    <convert type="ValueRange">1,1</convert>
-    <convert type="ConditionalShowHide" />
-  </widget>
-  <widget source="session.FrontendInfo" render="FixedLabel" position="667,712" zPosition="3" size="20,3" font="Regular; 22" halign="center" foregroundColor="un21e2e2e2" backgroundColor="bpExtra" transparent="0" valign="top">
-    <convert type="FrontendInfo">NUMBER</convert>
-    <convert type="ValueRange">2,2</convert>
-    <convert type="ConditionalShowHide" />
-  </widget>
-  <widget backgroundColor="bpPodloga" font="Replacement; 16" position="758,691" render="Label" size="505,22" source="session.CurrentService" transparent="1" zPosition="1" text="FREE TO AIR" foregroundColor="foreground" halign="right" valign="center" noWrap="1">
-    <convert type="FNCecmInfo">Default</convert>
-  </widget>
-  <widget source="session.Event_Now" render="Progress" pixmap="AeonMOD_Adrenalinnrw/infobar/infobar_event_slider1.png" position="18,643" size="520,19" zPosition="8" transparent="1">
-    <convert type="EventTime">Progress</convert>
-  </widget>
-  <widget source="session.CurrentService" render="Label" position="20,691" zPosition="1" size="367,21" font="Regular; 16" halign="left" backgroundColor="black" transparent="1" valign="center">
-    <convert type="gExtraTuner">TunerInfo</convert>
-  </widget>
-  <widget source="global.CurrentTime" render="Label" position="1013,11" size="255,33" font="Replacement; 26" valign="center" halign="right" backgroundColor="bpPodloga" transparent="1" foregroundColor="un21e2e2e2">
-    <convert type="ClockToText">Format:%a, %e. %B %Y | %H:%M</convert>
-  </widget>
-  <!--/* WEATHER WIDGET -->
-  <widget source="session.MSNWeather" render="Label" position="10,5" size="125,50" font="Regular; 42" backgroundColor="bpPodloga" halign="center" valign="center" transparent="1">
-    <convert type="MSNWeather">temperature_current</convert>
-  </widget>
-  <widget source="session.MSNWeather" render="MSNWeatherPixmap" position="120,5" size="48,48" alphatest="blend">
-    <convert type="MSNWeather">weathericon,current,/usr/share/enigma2/AeonMOD_Adrenalinnrw/WeatherIcon/,png</convert>
-  </widget>
-  <widget source="session.MSNWeather" render="Label" position="158,11" size="52,20" font="Regular;18" backgroundColor="black" halign="right" transparent="1">
-    <convert type="MSNWeather">temperature_high,day2</convert>
-  </widget>
-  <widget source="session.MSNWeather" render="Label" position="158,29" size="52,20" font="Regular;18" backgroundColor="black" halign="right" transparent="1">
-    <convert type="MSNWeather">temperature_low,day2</convert>
-  </widget>
-  <widget source="session.MSNWeather" render="MSNWeatherPixmap" position="227,5" size="48,48" alphatest="blend">
-    <convert type="MSNWeather">weathericon,day3,/usr/share/enigma2/AeonMOD_Adrenalinnrw/WeatherIcon/,png</convert>
-  </widget>
-  <widget source="session.MSNWeather" render="Label" position="260,11" size="52,20" font="Regular;18" foregroundColor="foreground" backgroundColor="background" halign="right" transparent="1">
-    <convert type="MSNWeather">temperature_high,day3</convert>
-  </widget>
-  <widget source="session.MSNWeather" render="Label" position="260,29" size="52,20" font="Regular;18" foregroundColor="foreground" backgroundColor="background" halign="right" transparent="1">
-    <convert type="MSNWeather">temperature_low,day3</convert>
-  </widget>
-  <widget source="session.CurrentService" render="Label" font="Replacement; 18" position="765,658" size="170,28" halign="left" foregroundColor="cyan" backgroundColor="bpPodloga" transparent="1" noWrap="1" zPosition="11">
-    <convert type="FNCsvcInfo">VideoXY</convert>
-  </widget>
-  <ePixmap pixmap="AeonMOD_Adrenalinnrw/infobar/hbbtv_off.png" position="872,620" size="80,40" zPosition="1" alphatest="blend" transparent="1" />
-  <widget source="session.CurrentService" render="Pixmap" position="872,620" size="80,40" zPosition="10" pixmap="AeonMOD_Adrenalinnrw/infobar/hbbtv_on.png" alphatest="blend" transparent="1">
-    <convert type="ServiceInfo">HasHBBTV</convert>
-    <convert type="ConditionalShowHide" />
-  </widget>
-  <widget source="session.CurrentService" render="Pixmap" pixmap="AeonMOD_Adrenalinnrw/icons/ico_format_4k.png" position="1194,620" size="81,40" zPosition="4" alphatest="blend">
-  <convert type="ServiceInfo">Is4K</convert>
-  <convert type="ConditionalShowHide" />
-</widget>
-</screen>
+    <widget source="session.Event_Now" render="Label" position="20,609" size="95,35" halign="left" font="Regular; 24" backgroundColor="bpPodloga" transparent="1" valign="center" foregroundColor="cyan">
+      <convert type="EventTime">StartTime</convert>
+      <convert type="ClockToText">Format:%H:%M</convert>
+    </widget>
+    <widget source="session.Event_Next" render="Label" borderWidth="2" position="87,658" size="456,30" halign="left" font="Ado; 22" foregroundColor="grey" backgroundColor="black" transparent="1" valign="center" noWrap="1">
+      <convert type="EventName">Name</convert>
+    </widget>
+    <widget source="session.Event_Now" render="Label" borderWidth="2" position="83,606" size="380,40" halign="left" font="Ado; 22" transparent="1" noWrap="1" backgroundColor="black" valign="center" zPosition="1" foregroundColor="bpExtra">
+      <convert type="EventName">Name</convert>
+    </widget>
+    <widget source="session.Event_Now" render="Label" position="428,606" size="110,40" halign="right" font="Regular; 20" foregroundColor="un21e2e2e2" backgroundColor="bpWindowTraka" transparent="1" valign="center" zPosition="1">
+      <convert type="EventTime">Remaining</convert>
+      <convert type="RemainingToText">InMinutes</convert>
+    </widget>
+    <widget source="session.CurrentService" render="Picon" position="569,580" size="170,100" transparent="1" alphatest="blend" zPosition="10">
+      <convert type="ServiceName">Reference</convert>
+    </widget>
+    <widget source="session.RecordState" render="Pixmap" position="630,522" size="48,48" pixmap="AeonMOD_Adrenalinnrw/infobar/recording.png" alphatest="blend">
+      <convert type="ConditionalShowHide">Blink</convert>
+    </widget>
+    <ePixmap name="bPPodloga" position="0,0" size="1282,720" pixmap="AeonMOD_Adrenalinnrw/infobar/infobar.png" zPosition="-3" alphatest="off" transparent="1" />
+    <ePixmap position="19,639" size="520,19" zPosition="5" pixmap="AeonMOD_Adrenalinnrw/infobar/infobar_event_slider_back1.png" alphatest="blend" transparent="1" />
+    <widget source="session.CurrentService" render="Label" position="83,572" borderWidth="2" size="460,36" font="Ado; 30" backgroundColor="black" transparent="1" halign="left" foregroundColor="un11b7b7b7" zPosition="0" valign="top" noWrap="1">
+      <convert type="ServiceName">Name</convert>
+    </widget>
+    <eLabel name="" position="20,657" size="119,32" text="Next:" halign="left" font="Regular; 24" transparent="1" noWrap="1" backgroundColor="bpPodloga" valign="center" foregroundColor="cyan" />
+    <widget backgroundColor="black" borderWidth="2" font="Ado; 22" halign="right" valign="top" noWrap="1" position="973,660" render="Label" size="290,26" source="session.CurrentService" transparent="1" zPosition="7">
+      <convert type="ServiceName">Provider</convert>
+    </widget>
+    <eLabel text="SNR:" position="765,612" size="54,30" font="Ado; 18" backgroundColor="bpPodloga" transparent="1" />
+    <eLabel text="AGC:" position="765,636" size="54,30" font="Ado; 18" backgroundColor="bpPodloga" transparent="1" />
+    <widget source="session.FrontendStatus" render="Label" position="805,612" size="100,30" font="Ado; 18" backgroundColor="bpPodloga" transparent="1" zPosition="1">
+      <convert type="FrontendInfo">SNR</convert>
+    </widget>
+    <widget source="session.FrontendStatus" render="Label" position="805,636" size="100,30" font="Ado; 18" backgroundColor="bpPodloga" transparent="1" zPosition="1">
+      <convert type="FrontendInfo">AGC</convert>
+    </widget>
+    <widget zPosition="20" size="80,39" position="954,615" alphatest="blend" pixmap="AeonMOD_Adrenalinnrw/icons/2.0.png" render="Pixmap" source="session.CurrentService">
+      <convert type="ServiceInfo">IsStereo</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget zPosition="20" size="80,40" position="954,615" alphatest="blend" pixmap="AeonMOD_Adrenalinnrw/icons/5.1.png" render="Pixmap" source="session.CurrentService">
+      <convert type="ServiceInfo">IsMultichannel</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget zPosition="20" size="80,40" position="1034,615" alphatest="blend" pixmap="AeonMOD_Adrenalinnrw/icons/h264.png" render="Pixmap" source="session.CurrentService">
+      <convert type="ServiceInfo">IsHD</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget zPosition="20" size="80,40" position="1036,614" alphatest="blend" pixmap="AeonMOD_Adrenalinnrw/icons/mpeg2.png" render="Pixmap" source="session.CurrentService">
+      <convert type="ServiceInfo">IsSD</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget zPosition="20" size="80,40" position="1114,615" alphatest="blend" pixmap="AeonMOD_Adrenalinnrw/icons/169.png" render="Pixmap" source="session.CurrentService">
+      <convert type="ServiceInfo">IsWidescreen</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget zPosition="20" size="80,40" position="1114,615" alphatest="blend" pixmap="AeonMOD_Adrenalinnrw/icons/43.png" render="Pixmap" source="session.CurrentService">
+      <convert type="ServiceInfo">IsNotWidescreen</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget zPosition="20" size="80,40" position="1194,615" alphatest="blend" pixmap="AeonMOD_Adrenalinnrw/icons/1080.png" render="Pixmap" source="session.CurrentService">
+      <convert type="ServiceInfo">Is1080</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget zPosition="20" size="80,40" position="1194,615" alphatest="blend" pixmap="AeonMOD_Adrenalinnrw/icons/720.png" render="Pixmap" source="session.CurrentService">
+      <convert type="ServiceInfo">Is720</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget zPosition="20" size="80,40" position="1194,615" alphatest="blend" pixmap="AeonMOD_Adrenalinnrw/icons/576.png" render="Pixmap" source="session.CurrentService">
+      <convert type="ServiceInfo">Is576</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <eLabel text="A" position="621,691" zPosition="1" size="20,24" font="Regular; 19" halign="center" backgroundColor="bpPodloga" transparent="1" valign="center" foregroundColor="un21e2e2e2" />
+    <eLabel text="B" position="647,691" zPosition="1" size="20,24" font="Regular; 19" halign="center" backgroundColor="bpPodloga" transparent="1" valign="center" foregroundColor="un21e2e2e2" />
+    <eLabel text="C" position="672,691" zPosition="1" size="20,24" font="Regular; 19" halign="center" backgroundColor="bpPodloga" transparent="1" valign="center" foregroundColor="un21e2e2e2" />
+    <widget source="session.TunerInfo" render="FixedLabel" text="A" position="619,691" zPosition="2" size="22,24" font="Regular; 19" halign="center" backgroundColor="bpPodloga" transparent="1" valign="center" foregroundColor="un21e2e2e2">
+      <convert type="TunerInfo">TunerUseMask</convert>
+      <convert type="ValueBitTest">1</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.TunerInfo" render="FixedLabel" text="B" position="647,691" zPosition="2" size="20,24" font="Regular; 19" halign="center" backgroundColor="bpPodloga" transparent="1" valign="center" foregroundColor="un21e2e2e2">
+      <convert type="TunerInfo">TunerUseMask</convert>
+      <convert type="ValueBitTest">2</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.TunerInfo" render="FixedLabel" text="C" position="672,692" zPosition="2" size="20,24" font="Regular; 19" halign="center" backgroundColor="bpPodloga" transparent="1" valign="center" foregroundColor="un21e2e2e2">
+      <convert type="TunerInfo">TunerUseMask</convert>
+      <convert type="ValueBitTest">4</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.FrontendInfo" render="FixedLabel" position="621,712" zPosition="3" size="20,3" font="Regular; 22" halign="center" foregroundColor="un21e2e2e2" backgroundColor="bpExtra" transparent="0" valign="top">
+      <convert type="FrontendInfo">NUMBER</convert>
+      <convert type="ValueRange">0,0</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.FrontendInfo" render="FixedLabel" position="647,712" zPosition="3" size="20,3" font="Regular; 20" halign="center" foregroundColor="un21e2e2e2" backgroundColor="bpExtra" transparent="0" valign="top">
+      <convert type="FrontendInfo">NUMBER</convert>
+      <convert type="ValueRange">1,1</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.FrontendInfo" render="FixedLabel" position="672,712" zPosition="3" size="20,3" font="Regular; 22" halign="center" foregroundColor="un21e2e2e2" backgroundColor="bpExtra" transparent="0" valign="top">
+      <convert type="FrontendInfo">NUMBER</convert>
+      <convert type="ValueRange">2,2</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget backgroundColor="bpPodloga" font="Replacement; 16" position="758,691" render="Label" size="505,22" source="session.CurrentService" transparent="1" zPosition="1" text="FREE TO AIR" halign="right" valign="center" noWrap="1">
+      <convert type="FNCecmInfo">Default</convert>
+    </widget>
+    <widget source="session.Event_Now" render="Progress" pixmap="AeonMOD_Adrenalinnrw/infobar/infobar_event_slider1.png" position="18,643" size="520,19" zPosition="8" transparent="1">
+      <convert type="EventTime">Progress</convert>
+    </widget>
+    <widget source="session.CurrentService" render="Label" position="20,690" zPosition="1" size="367,21" font="Regular; 18" halign="left" backgroundColor="bpPodloga" transparent="1" valign="center">
+      <convert type="gExtraTuner">TunerInfo</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" borderWidth="2" position="1013,11" size="255,33" font="Replacement; 26" valign="center" halign="right" backgroundColor="black" transparent="1" foregroundColor="un21e2e2e2">
+      <convert type="ClockToText">Format:%a, %e. %B %Y | %H:%M</convert>
+    </widget>
+    <!--/* WEATHER WIDGET -->
+    <widget source="session.MSNWeather" render="Label" position="10,5" size="125,50" font="Regular; 42" backgroundColor="bpPodloga" halign="center" valign="center" transparent="1">
+      <convert type="MSNWeather">temperature_current</convert>
+    </widget>
+    <widget source="session.MSNWeather" render="MSNWeatherPixmap" position="120,5" size="48,48" alphatest="blend">
+      <convert type="MSNWeather">weathericon,current,/usr/share/enigma2/AeonMOD_Adrenalinnrw/WeatherIcon/,png</convert>
+    </widget>
+    <widget source="session.MSNWeather" render="Label" position="158,11" size="52,20" font="Regular;18" backgroundColor="black" halign="right" transparent="1">
+      <convert type="MSNWeather">temperature_high,day2</convert>
+    </widget>
+    <widget source="session.MSNWeather" render="Label" position="158,29" size="52,20" font="Regular;18" backgroundColor="black" halign="right" transparent="1">
+      <convert type="MSNWeather">temperature_low,day2</convert>
+    </widget>
+    <widget source="session.MSNWeather" render="MSNWeatherPixmap" position="227,5" size="48,48" alphatest="blend">
+      <convert type="MSNWeather">weathericon,day3,/usr/share/enigma2/AeonMOD_Adrenalinnrw/WeatherIcon/,png</convert>
+    </widget>
+    <widget source="session.MSNWeather" render="Label" position="260,11" size="52,20" font="Regular;18" foregroundColor="foreground" backgroundColor="background" halign="right" transparent="1">
+      <convert type="MSNWeather">temperature_high,day3</convert>
+    </widget>
+    <widget source="session.MSNWeather" render="Label" position="260,29" size="52,20" font="Regular;18" foregroundColor="foreground" backgroundColor="background" halign="right" transparent="1">
+      <convert type="MSNWeather">temperature_low,day3</convert>
+    </widget>
+    <widget source="session.CurrentService" render="Label" font="Replacement; 18" position="372,690" size="170,21" halign="right" backgroundColor="bpPodloga" transparent="1" noWrap="1" zPosition="11">
+      <convert type="FNCsvcInfo">VideoXY</convert>
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" position="872,615" size="80,40" zPosition="10" pixmap="AeonMOD_Adrenalinnrw/infobar/hbbtv_on.png" alphatest="blend" transparent="1">
+      <convert type="ServiceInfo">HasHBBTV</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" pixmap="AeonMOD_Adrenalinnrw/icons/ico_format_4k.png" position="1194,615" size="81,40" zPosition="4" alphatest="blend">
+      <convert type="ServiceInfo">Is4K</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+<widget zPosition="20" size="80,40" position="1194,615" alphatest="blend" pixmap="AeonMOD_Adrenalinnrw/icons/iptv.png" render="Pixmap" source="session.CurrentService">
+      <convert type="ServiceInfo">IsStream</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" position="790,665" size="20,20" zPosition="10" pixmap="AeonMOD_Adrenalinnrw/infobar/crypto/GA2.png" alphatest="blend">
+      <convert type="CaidInfo2">IrdEcm</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" position="815,665" size="20,20" zPosition="10" pixmap="AeonMOD_Adrenalinnrw/infobar/crypto/GA5.png" alphatest="on">
+      <convert type="CaidInfo2">NagraEcm</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" position="840,665" size="20,20" zPosition="10" pixmap="AeonMOD_Adrenalinnrw/infobar/crypto/GA3.png" alphatest="on">
+      <convert type="CaidInfo2">SecaEcm</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" position="865,665" size="20,20" zPosition="10" pixmap="AeonMOD_Adrenalinnrw/infobar/crypto/GA4.png" alphatest="on">
+      <convert type="CaidInfo2">ViaEcm</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" position="890,665" size="20,20" zPosition="10" pixmap="AeonMOD_Adrenalinnrw/infobar/crypto/GA9.png" alphatest="on">
+      <convert type="CaidInfo2">DreamEcm</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" position="915,665" size="20,20" zPosition="10" pixmap="AeonMOD_Adrenalinnrw/infobar/crypto/GA8.png" alphatest="on">
+      <convert type="CaidInfo2">ConaxEcm</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" position="940,665" size="20,20" zPosition="10" pixmap="AeonMOD_Adrenalinnrw/infobar/crypto/GA1.png" alphatest="on">
+      <convert type="CaidInfo2">BetaEcm</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" position="965,665" size="20,20" zPosition="10" pixmap="AeonMOD_Adrenalinnrw/infobar/crypto/GA6.png" alphatest="on">
+      <convert type="CaidInfo2">CrwEcm</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" position="765,665" size="20,20" zPosition="10" pixmap="AeonMOD_Adrenalinnrw/infobar/crypto/GA7.png" alphatest="on">
+      <convert type="CaidInfo2">NdsEcm</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <ePixmap position="790,665" zPosition="1" size="20,20" pixmap="AeonMOD_Adrenalinnrw/infobar/crypto/SA2.png" alphatest="on" transparent="0" />
+    <ePixmap position="815,665" zPosition="1" size="20,20" pixmap="AeonMOD_Adrenalinnrw/infobar/crypto/SA5.png" alphatest="on" transparent="0" />
+    <ePixmap position="840,665" zPosition="1" size="20,20" pixmap="AeonMOD_Adrenalinnrw/infobar/crypto/SA3.png" alphatest="on" transparent="0" />
+    <ePixmap position="865,665" zPosition="1" size="20,20" pixmap="AeonMOD_Adrenalinnrw/infobar/crypto/SA4.png" alphatest="on" transparent="0" />
+    <ePixmap position="890,665" zPosition="1" size="20,20" pixmap="AeonMOD_Adrenalinnrw/infobar/crypto/SA9.png" alphatest="on" transparent="0" />
+    <ePixmap position="915,665" zPosition="1" size="20,20" pixmap="AeonMOD_Adrenalinnrw/infobar/crypto/SA8.png" alphatest="on" transparent="0" />
+    <ePixmap position="940,665" zPosition="1" size="20,20" pixmap="AeonMOD_Adrenalinnrw/infobar/crypto/SA1.png" alphatest="on" transparent="0" />
+    <ePixmap position="965,665" zPosition="1" size="20,20" pixmap="AeonMOD_Adrenalinnrw/infobar/crypto/SA6.png" alphatest="on" transparent="0" />
+    <ePixmap position="765,665" zPosition="1" size="20,20" pixmap="AeonMOD_Adrenalinnrw/infobar/crypto/SA7.png" alphatest="on" transparent="0" />
+    <widget source="session.CurrentService" render="Pixmap" position="790,665" size="20,20" zPosition="10" pixmap="AeonMOD_Adrenalinnrw/infobar/crypto/YA2.png" alphatest="blend">
+      <convert type="CaidInfo2">IrdCrypt</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" position="815,665" size="20,20" zPosition="10" pixmap="AeonMOD_Adrenalinnrw/infobar/crypto/YA5.png" alphatest="blend">
+      <convert type="CaidInfo2">NagraCrypt</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" position="840,665" size="20,20" zPosition="10" pixmap="AeonMOD_Adrenalinnrw/infobar/crypto/YA3.png" alphatest="blend">
+      <convert type="CaidInfo2">SecaCrypt</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" position="865,665" size="20,20" zPosition="10" pixmap="AeonMOD_Adrenalinnrw/infobar/crypto/YA4.png" alphatest="blend">
+      <convert type="ExtremeInfo">ViaCrypt</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" position="890,665" size="20,20" zPosition="10" pixmap="AeonMOD_Adrenalinnrw/infobar/crypto/YA9.png" alphatest="blend">
+      <convert type="CaidInfo2">DreamCrypt</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" position="915,665" size="20,20" zPosition="10" pixmap="AeonMOD_Adrenalinnrw/infobar/crypto/YA8.png" alphatest="blend">
+      <convert type="CaidInfo2">ConaxCrypt</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" position="940,665" size="20,20" zPosition="10" pixmap="AeonMOD_Adrenalinnrw/infobar/crypto/YA1.png" alphatest="blend">
+      <convert type="CaidInfo2">BetaCrypt</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" position="965,665" size="20,20" zPosition="10" pixmap="AeonMOD_Adrenalinnrw/infobar/crypto/YA6.png" alphatest="blend">
+      <convert type="CaidInfo2">CrwCrypt</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" position="765,665" size="20,20" zPosition="10" pixmap="AeonMOD_Adrenalinnrw/infobar/crypto/YA7.png" alphatest="blend">
+      <convert type="CaidInfo2">NdsCrypt</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" borderWidth="2" render="Label" position="20,572" size="70,36" zPosition="2" font="Ado; 32" halign="left" backgroundColor="black" transparent="1" foregroundColor="cyan">
+      <convert type="ServiceName2">%n</convert>
+    </widget>
+  </screen>
   <screen name="SecondInfoBar" flags="wfNoBorder" position="center,center" size="1280,720" title="Open Pli" backgroundColor="transparent">
     <widget source="session.CurrentService" borderWidth="2" render="Label" position="336,114" size="592,31" font="Replacement; 26" backgroundColor="black" transparent="1" halign="center" foregroundColor="bpSide" zPosition="5" valign="top" noWrap="1">
       <convert type="ServiceName">Name</convert>
@@ -579,9 +666,10 @@
   <screen name="UnhandledKey" position="611,130" size="90,73" title="UnhandledKey" zPosition="100" flags="wfNoBorder" backgroundColor="transpBlack">
     <widget alphatest="off" name="UnhandledKeyPixmap" pixmap="AeonMOD_Adrenalinnrw/volume/unhandled.png" position="0,0" size="90,73" transparent="0" />
   </screen>
-  <screen name="Volume" position="492,91" zPosition="1" size="296,46" title="Volume" flags="wfNoBorder" transparent="0" backgroundColor="transparent">
+  <screen name="Volume" position="492,91" zPosition="1" size="296,146" title="Volume" flags="wfNoBorder" transparent="0" backgroundColor="transparent">
     <ePixmap name="bPPodloga" position="0,0" size="296,46" pixmap="AeonMOD_Adrenalinnrw/volume/volume_back.png" zPosition="-3" transparent="0" alphatest="off" />
     <widget name="Volume" pixmap="AeonMOD_Adrenalinnrw/volume/volume.png" position="57,16" zPosition="2" size="230,12" transparent="1" alphatest="blend" />
+    <widget backgroundColor="cyan" borderWidth="2" font="Regular;58" foregroundColor="border" halign="center" position="105,39" render="VVolumeText" size="90,70" source="global.CurrentTime" transparent="1" valign="center" zPosition="20" />
   </screen>
   <screen name="Mute" position="90,20" size="90,73" title="Mute" backgroundColor="transparent" zPosition="10" flags="wfNoBorder" transparent="0">
     <ePixmap pixmap="AeonMOD_Adrenalinnrw/volume/mute.png" position="0,0" size="90,73" zPosition="-5" alphatest="off" />
@@ -703,7 +791,7 @@ MultiContentEntryText(pos = (535, 0), size = (105, 25),  font = 1, flags = RT_HA
   </screen>
   <screen name="ChannelSelection" position="0,0" size="1280,720" title="Channel Selection" flags="wfNoBorder" transparent="0" backgroundColor="transparent" borderWidth="0" borderColor="transparent">
     <widget source="Title" render="Label" position="55,0" size="810,28" zPosition="2" halign="left" font="Replacement; 24" foregroundColor="red_tux1" backgroundColor="bpPodloga" transparent="1" valign="center" />
-    <widget name="list" position="55,67" size="646,584" scrollbarMode="showOnDemand" colorAdditionalInfo="bpSide" colorAdditionalInfoSelected="hellgreen" foregroundColorServiceNotAvail="#444444" colorServiceDescription="ciel" colorServiceDescriptionSelected="yellow" serviceItemHeight="30" serviceNumberFont="Regular;16" serviceNameFont="Regular;20" serviceInfoFont="Ado;24" colorEventProgressbarBorderSelected="ciel" colorEventProgressbarBorder="ciel" picServiceEventProgressbar="AeonMOD_Adrenalinnrw/progress/pl.png" selectionPixmap="AeonMOD_Adrenalinnrw/selections/sel_1100x701.png" zPosition="-5" transparent="1" backgroundColor="bgblueNoTrans" backgroundPixmap="AeonMOD_Adrenalinnrw/chnsel/separator.png" halign="block" />
+    <widget name="list" position="55,67" size="646,584" scrollbarMode="showOnDemand" colorAdditionalInfo="bpSide" colorAdditionalInfoSelected="hellgreen" foregroundColorServiceNotAvail="#444444" colorServiceDescription="ciel" colorServiceDescriptionSelected="yellow" serviceItemHeight="30" serviceNumberFont="Regular;16" serviceNameFont="Regular;22" serviceInfoFont="Ado;22" colorEventProgressbarBorderSelected="ciel" colorEventProgressbarBorder="ciel" picServiceEventProgressbar="AeonMOD_Adrenalinnrw/progress/pl.png" selectionPixmap="AeonMOD_Adrenalinnrw/selections/sel_1100x701.png" zPosition="-5" transparent="1" backgroundColor="bgblueNoTrans" backgroundPixmap="AeonMOD_Adrenalinnrw/chnsel/separator.png" halign="block" />
     <widget name="key_red" position="45,670" size="158,30" zPosition="1" font="Replacement; 20" halign="center" valign="center" backgroundColor="bpPodloga" transparent="1" />
     <widget name="key_green" position="385,671" size="158,30" zPosition="1" font="Replacement; 20" halign="center" valign="center" backgroundColor="bpPodloga" transparent="1" />
     <widget name="key_yellow" position="215,670" size="158,30" zPosition="1" font="Replacement; 20" halign="center" valign="center" backgroundColor="bpPodloga" transparent="1" />
@@ -1532,7 +1620,7 @@ MultiContentEntryText(pos = (50, 28), size = (480, 40), font = 1, flags = RT_HAL
   </screen>
   <screen name="Standby" position="0,0" size="1280,720" title="Standby" flags="wfNoBorder" backgroundColor="black">
     <eLabel name="" position="381,44" size="298,26" text="in Standby mode. :)" backgroundColor="black" foregroundColor="un666666" transparent="1" font="Console; 20" zPosition="1" />
-    <ePixmap name="" position="216,34" size="170,38" pixmap="AeonMOD_Adrenalinnrw/logo/esi_stnby.png" />
+    <ePixmap name="" position="216,34" size="170,38" pixmap="AeonMOD_Adrenalinnrw/logo/pb_stnby.png" />
     <eLabel name="" position="18,44" size="194,26" text="Hello, i'm" backgroundColor="black" foregroundColor="un666666" transparent="1" font="Console; 20" zPosition="1" halign="right" />
   </screen>
   <screen name="SleepTimerEdit" position="center,-1" size="1280,720" title="Sleep Timer" flags="wfNoBorder" backgroundColor="transparent">
@@ -2917,7 +3005,35 @@ MultiContentEntryPixmapAlphaTest(pos = (10, 6), size = (48, 48), png = 3), # ind
     <ePixmap pixmap="AeonMOD_Adrenalinnrw/buttons/buttons.png" position="224,602" size="396,20" alphatest="blend" />
     <widget name="config" position="243,163" size="801,345" scrollbarMode="showOnDemand" backgroundColor="bpPodloga" transparent="1" />
   </screen>
- <screen name="powerboardCenter" position="center,center" size="1280,720" title="Powerboard Center" flags="wfNoBorder" backgroundColor="transparent">
+  <screen name="AltCamManager" position="0,0" size="1280,720" title="SoftCam manager" backgroundColor="transparent" flags="wfNoBorder">
+    <widget source="Title" render="Label" position="218,78" size="844,57" zPosition="2" halign="center" font="Replacement; 26" foregroundColor="un21e2e2e2" backgroundColor="bpPodloga" transparent="1" valign="center" />
+    <ePixmap name="bPPodloga" position="193,60" size="894,600" pixmap="AeonMOD_Adrenalinnrw/background/back_mon_empty.png" zPosition="-3" />
+    <ePixmap name="box_slika" position="233,154" size="822,427" pixmap="AeonMOD_Adrenalinnrw/background/box.png" zPosition="-2" transparent="0" borderWidth="1" borderColor="background2" />
+    <widget source="key_red" render="Label" position="251,580" size="180,66" zPosition="1" font="Regular; 20" halign="left" valign="center" backgroundColor="bpPodloga" transparent="1" />
+    <widget source="key_green" render="Label" position="461,580" size="180,66" zPosition="1" font="Regular; 20" halign="left" valign="center" backgroundColor="bpPodloga" transparent="1" />
+    <widget source="key_yellow" render="Label" position="676,580" size="180,66" zPosition="1" font="Regular; 20" halign="left" valign="center" backgroundColor="bpPodloga" transparent="1" />
+    <widget source="key_blue" render="Label" position="891,580" size="180,66" zPosition="1" font="Regular; 20" halign="left" valign="center" backgroundColor="bpPodloga" transparent="1" />
+    <ePixmap pixmap="AeonMOD_Adrenalinnrw/buttons/buttons.png" position="224,602" size="681,20" alphatest="blend" />
+    <widget source="session.CurrentService" render="Label" position="-424,546" zPosition="2" size="400,30" font="Regular;26" halign="left" foregroundColor="yellow" backgroundColor="black" transparent="1" name="SATELIT">
+      <convert type="FNCsvcName">%S %s</convert>
+    </widget>
+    <eLabel position="652,161" size="395,38" halign="center" font="Replacement; 24" foregroundColor="un21e2e2e2" transparent="0" noWrap="1" backgroundColor="bpPodloga" valign="center" text=" Ecm Info" />
+    <eLabel position="241,161" size="395,38" halign="center" font="Replacement; 24" foregroundColor="un21e2e2e2" transparent="0" noWrap="1" backgroundColor="bpPodloga" valign="center" text=" Cam Selection" />
+    <eLabel position="5,0" size="620,2" backgroundColor="black" />
+    <widget source="list" render="Listbox" position="243,209" size="395,358" scrollbarMode="showNever" transparent="1" selectionPixmap="AeonMOD_Adrenalinnrw/selections/sel_1100x70.png">
+      <convert type="TemplatedMultiContent">
+					{
+						"template": [MultiContentEntryPixmapAlphaTest(pos=(5, 5), size=(51, 40), png=1), 
+							MultiContentEntryText(pos=(65, 10), size=(650, 40), font=0, flags=RT_HALIGN_LEFT, text=0), 
+							MultiContentEntryText(pos=(5, 25), size=(51, 16), font=1, flags=RT_HALIGN_CENTER, text=2),],
+						"fonts": [gFont("Regular", 24), gFont("Regular", 12)],
+						"itemHeight": 50
+					}
+    </convert>
+    </widget>
+    <widget name="status" position="652,209" zPosition="4" size="395,359" font="Regular; 18" foregroundColor="un21e2e2e2" backgroundColor="bpPodloga" transparent="1" halign="left" />
+  </screen>
+  <screen name="powerboardCenter" position="center,center" size="1280,720" title="Powerboard Center" flags="wfNoBorder" backgroundColor="transparent">
     <widget name="menu" position="53,105" size="240,550" scrollbarMode="showNever" backgroundColor="bpPodloga" transparent="1" zPosition="10" halign="right" itemHeight="60" selectionPixmap="AeonMOD_Adrenalinnrw/menu/Menu_Selection.png" />
     <widget source="Title" render="Label" position="628,5" size="512,24" zPosition="2" halign="right" font="Replacement; 20" foregroundColor="un21e2e2e2" backgroundColor="bpPodloga" transparent="1" valign="center" />
     <widget source="VersionPB" render="Label" position="1140,6" size="77,24" font="Replacement; 20" backgroundColor="bpPodloga" transparent="1" zPosition="10" halign="right" text="v5.6.3" />
@@ -3332,17 +3448,6 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2,orgpos.y()))		</a
     <widget font="Regular;17" halign="left" name="readCache" position="243,375" size="622,25" valign="center" transparent="1" backgroundColor="bpPodloga" />
     <widget font="Regular;18" halign="left" name="temp" position="243,405" size="622,25" valign="center" transparent="1" backgroundColor="bpPodloga" />
   </screen>
-  <screen name="HddMount" position="center,center" size="1280,720" title="Hard Drive Mount" flags="wfNoBorder" backgroundColor="transparent">
-    <widget source="Title" render="Label" position="218,78" size="844,57" zPosition="2" halign="center" font="Replacement; 26" foregroundColor="un21e2e2e2" backgroundColor="bpPodloga" transparent="1" valign="center" />
-    <ePixmap name="bPPodloga" position="193,60" size="894,600" pixmap="AeonMOD_Adrenalinnrw/background/back_mon_empty.png" zPosition="-3" />
-    <ePixmap name="box_slika" position="233,154" size="822,427" pixmap="AeonMOD_Adrenalinnrw/background/box.png" zPosition="-2" transparent="0" borderWidth="1" borderColor="background2" />
-    <widget name="key_red" position="251,580" size="180,66" zPosition="1" font="Regular; 20" halign="left" valign="center" backgroundColor="bpPodloga" transparent="1" />
-    <widget name="key_green" position="461,580" size="180,66" zPosition="1" font="Regular; 20" halign="left" valign="center" backgroundColor="bpPodloga" transparent="1" />
-    <widget name="key_yellow" position="676,580" size="180,66" zPosition="1" font="Regular; 20" halign="left" valign="center" backgroundColor="bpPodloga" transparent="1" />
-    <widget name="key_blue" position="891,580" size="180,66" zPosition="1" font="Regular; 20" halign="left" valign="center" backgroundColor="bpPodloga" transparent="1" />
-    <ePixmap pixmap="AeonMOD_Adrenalinnrw/buttons/buttons.png" position="224,602" size="681,20" alphatest="blend" />
-    <widget name="menu" position="243,163" scrollbarMode="showOnDemand" size="799,408" transparent="1" backgroundColor="bpPodloga" selectionPixmap="AeonMOD_Adrenalinnrw/selections/sel_1100x70.png" />
-  </screen>
   <screen name="HddPartitions" position="center,center" size="1280,720" title="Hard Drive Partitions" flags="wfNoBorder" backgroundColor="transparent">
     <widget source="Title" render="Label" position="218,78" size="844,57" zPosition="2" halign="center" font="Replacement; 26" foregroundColor="un21e2e2e2" backgroundColor="bpPodloga" transparent="1" valign="center" />
     <ePixmap name="bPPodloga" position="193,60" size="894,600" pixmap="AeonMOD_Adrenalinnrw/background/back_mon_empty.png" zPosition="-3" />
@@ -3365,16 +3470,6 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2,orgpos.y()))		</a
     <ePixmap pixmap="AeonMOD_Adrenalinnrw/buttons/buttons.png" position="224,602" size="681,20" alphatest="blend" />
     <widget name="menu" position="243,163" scrollbarMode="showOnDemand" size="799,408" transparent="1" backgroundColor="bpPodloga" selectionPixmap="AeonMOD_Adrenalinnrw/selections/sel_1100x70.png" />
     <eLabel name="new eLabel" position="963,541" size="75,25" text="MENU" font="Replacement; 20" halign="center" transparent="0" zPosition="2" foregroundColor="un21e2e2e2" backgroundColor="bpWindowTraka" valign="center" />
-  </screen>
-  <screen name="Swap" position="center,center" size="1280,720" title="Swap Manager" flags="wfNoBorder" backgroundColor="transparent">
-    <widget source="Title" render="Label" position="218,78" size="844,57" zPosition="2" halign="center" font="Replacement; 26" foregroundColor="un21e2e2e2" backgroundColor="bpPodloga" transparent="1" valign="center" />
-    <ePixmap name="bPPodloga" position="193,60" size="894,600" pixmap="AeonMOD_Adrenalinnrw/background/back_mon_empty.png" zPosition="-3" />
-    <ePixmap name="box_slika" position="233,154" size="822,427" pixmap="AeonMOD_Adrenalinnrw/background/box.png" zPosition="-2" transparent="0" borderWidth="1" borderColor="background2" />
-    <widget name="canceltext" position="251,580" size="180,66" zPosition="1" font="Regular; 20" halign="left" valign="center" backgroundColor="bpPodloga" transparent="1" />
-    <widget name="oktext" position="461,580" size="180,66" zPosition="1" font="Regular; 20" halign="left" valign="center" backgroundColor="bpPodloga" transparent="1" />
-    <ePixmap pixmap="AeonMOD_Adrenalinnrw/buttons/buttons.png" position="224,602" size="393,20" alphatest="blend" />
-    <widget name="config" position="243,163" size="802,359" scrollbarMode="showOnDemand" transparent="1" backgroundColor="bpPodloga" />
-    <widget name="conn" position="243,529" size="802,41" font="Regular;20" halign="center" valign="center" foregroundColor="white" backgroundColor="bpPodloga" transparent="1" />
   </screen>
   <screen name="KernelModules" position="center,center" size="1280,720" title="Kernel Module" flags="wfNoBorder" backgroundColor="transparent">
     <widget source="Title" render="Label" position="218,78" size="844,57" zPosition="2" halign="center" font="Replacement; 26" foregroundColor="un21e2e2e2" backgroundColor="bpPodloga" transparent="1" valign="center" />
@@ -4225,4 +4320,26 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (100, 40), png = 2),
     <widget name="Mlist" position="48,160" size="650,450" zPosition="5" scrollbarMode="showNever" transparent="1" />
     <widget name="label1" position="200,670" size="641,30" font="Regular; 35" transparent="1" foregroundColor="lightgrey" halign="center" backgroundColor="black" />
   </screen>
+<screen name="MSNWeatherPlugin" position="0,0" size="1280,720" title="Weather Plugin" flags="wfNoBorder" backgroundColor="transparent">
+  <ePixmap pixmap="Elgato-HD-CN/weatherback.png" position="0,0" size="1280,720" zPosition="-1" alphatest="on" />
+  <widget render="Label" source="caption" position="66,27" size="573,57" font="Replacement; 30" zPosition="1" transparent="1" backgroundColor="black" foregroundColor="white" halign="left" valign="center" />
+  <widget render="Label" source="observationtime" position="475,383" zPosition="1" size="244,30" font="bold; 18" transparent="1" halign="right" backgroundColor="black" valign="center" foregroundColor="un808888" />
+  <widget render="Label" source="observationpoint" position="65,383" zPosition="1" size="404,30" font="bold; 18" transparent="1" halign="left" backgroundColor="black" valign="center" foregroundColor="un808888" />
+  <widget name="currenticon" position="160,96" zPosition="1" size="175,120" alphatest="blend" transparent="1" />
+  <widget render="Label" source="currentTemp" position="358,96" zPosition="1" size="239,120" font="Replacement; 75" transparent="1" backgroundColor="black" halign="center" valign="top" />
+  <widget render="Label" source="feelsliketemp" position="393,189" zPosition="1" size="173,27" font="Replacement; 22" transparent="1" backgroundColor="black" halign="center" />
+  <widget render="Label" source="condition" position="71,245" zPosition="1" size="382,35" font="Replacement; 22" transparent="1" backgroundColor="black" halign="left" valign="center" foregroundColor="grey" />
+  <widget render="Label" source="wind_condition" position="71,289" zPosition="1" size="218,35" font="Replacement; 22" transparent="1" backgroundColor="black" halign="left" valign="center" foregroundColor="grey" />
+  <widget render="Label" source="humidity" position="71,338" zPosition="1" size="218,35" font="Replacement; 22" valign="center" transparent="1" backgroundColor="black" halign="left" foregroundColor="grey" />
+  <widget render="Label" source="weekday2" position="35,434" zPosition="1" size="205,57" halign="center" valign="center" font="Replacement; 20" transparent="1" backgroundColor="black" />
+  <widget name="weekday2_icon" position="78,507" zPosition="1" size="115,80" alphatest="blend" transparent="1" />
+  <widget render="Label" source="weekday2_temp" position="36,603" zPosition="1" size="202,75" halign="center" valign="center" font="Replacement; 20" transparent="1" backgroundColor="black" />
+  <widget render="Label" source="weekday3_temp" position="271,603" zPosition="1" size="202,75" halign="center" valign="center" font="Replacement; 20" transparent="1" backgroundColor="black" />
+  <widget name="weekday3_icon" position="313,507" zPosition="1" size="115,80" alphatest="blend" transparent="1" />
+  <widget render="Label" source="weekday3" position="270,434" zPosition="1" size="205,57" halign="center" valign="center" font="Replacement; 20" transparent="1" backgroundColor="black" />
+  <widget render="Label" source="weekday4_temp" position="500,603" zPosition="1" size="202,75" halign="center" valign="center" font="Replacement; 20" transparent="1" backgroundColor="black" />
+  <widget name="weekday4_icon" position="549,507" zPosition="1" size="115,80" alphatest="blend" transparent="1" />
+  <widget render="Label" source="weekday4" position="499,433" zPosition="1" size="205,57" halign="center" valign="center" font="Replacement; 20" transparent="1" backgroundColor="black" />
+  <widget render="Label" source="statustext" position="235,136" zPosition="0" size="0,465" font="Regular;20" halign="center" valign="center" transparent="1" backgroundColor="background" />
+</screen>
 </skin>
