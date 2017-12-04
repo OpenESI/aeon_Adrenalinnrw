@@ -276,7 +276,7 @@
     <widget source="session.CurrentService" render="Label" position="20,690" zPosition="1" size="367,21" font="Regular; 18" halign="left" backgroundColor="bpPodloga" transparent="1" valign="center">
       <convert type="gExtraTuner">TunerInfo</convert>
     </widget>
-    <widget source="global.CurrentTime" render="Label" borderWidth="2" position="1013,11" size="255,33" font="Replacement; 26" valign="center" halign="right" backgroundColor="black" transparent="1" foregroundColor="un21e2e2e2">
+    <widget source="global.CurrentTime" render="Label" borderWidth="2" position="656,12" size="299,33" font="Replacement; 26" valign="center" halign="right" backgroundColor="black" transparent="1" foregroundColor="un21e2e2e2">
       <convert type="ClockToText">Format:%a, %e. %B %Y | %H:%M</convert>
     </widget>
     <!--/* WEATHER WIDGET -->
@@ -312,7 +312,7 @@
       <convert type="ServiceInfo">Is4K</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-<widget zPosition="20" size="80,40" position="1194,615" alphatest="blend" pixmap="AeonMOD_Adrenalinnrw/icons/iptv.png" render="Pixmap" source="session.CurrentService">
+    <widget zPosition="20" size="80,40" position="1194,615" alphatest="blend" pixmap="AeonMOD_Adrenalinnrw/icons/iptv.png" render="Pixmap" source="session.CurrentService">
       <convert type="ServiceInfo">IsStream</convert>
       <convert type="ConditionalShowHide" />
     </widget>
@@ -669,7 +669,6 @@
   <screen name="Volume" position="492,91" zPosition="1" size="296,146" title="Volume" flags="wfNoBorder" transparent="0" backgroundColor="transparent">
     <ePixmap name="bPPodloga" position="0,0" size="296,46" pixmap="AeonMOD_Adrenalinnrw/volume/volume_back.png" zPosition="-3" transparent="0" alphatest="off" />
     <widget name="Volume" pixmap="AeonMOD_Adrenalinnrw/volume/volume.png" position="57,16" zPosition="2" size="230,12" transparent="1" alphatest="blend" />
-    <widget backgroundColor="cyan" borderWidth="2" font="Regular;58" foregroundColor="border" halign="center" position="105,39" render="VVolumeText" size="90,70" source="global.CurrentTime" transparent="1" valign="center" zPosition="20" />
   </screen>
   <screen name="Mute" position="90,20" size="90,73" title="Mute" backgroundColor="transparent" zPosition="10" flags="wfNoBorder" transparent="0">
     <ePixmap pixmap="AeonMOD_Adrenalinnrw/volume/mute.png" position="0,0" size="90,73" zPosition="-5" alphatest="off" />
@@ -4320,26 +4319,26 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (100, 40), png = 2),
     <widget name="Mlist" position="48,160" size="650,450" zPosition="5" scrollbarMode="showNever" transparent="1" />
     <widget name="label1" position="200,670" size="641,30" font="Regular; 35" transparent="1" foregroundColor="lightgrey" halign="center" backgroundColor="black" />
   </screen>
-<screen name="MSNWeatherPlugin" position="0,0" size="1280,720" title="Weather Plugin" flags="wfNoBorder" backgroundColor="transparent">
-  <ePixmap pixmap="Elgato-HD-CN/weatherback.png" position="0,0" size="1280,720" zPosition="-1" alphatest="on" />
-  <widget render="Label" source="caption" position="66,27" size="573,57" font="Replacement; 30" zPosition="1" transparent="1" backgroundColor="black" foregroundColor="white" halign="left" valign="center" />
-  <widget render="Label" source="observationtime" position="475,383" zPosition="1" size="244,30" font="bold; 18" transparent="1" halign="right" backgroundColor="black" valign="center" foregroundColor="un808888" />
-  <widget render="Label" source="observationpoint" position="65,383" zPosition="1" size="404,30" font="bold; 18" transparent="1" halign="left" backgroundColor="black" valign="center" foregroundColor="un808888" />
-  <widget name="currenticon" position="160,96" zPosition="1" size="175,120" alphatest="blend" transparent="1" />
-  <widget render="Label" source="currentTemp" position="358,96" zPosition="1" size="239,120" font="Replacement; 75" transparent="1" backgroundColor="black" halign="center" valign="top" />
-  <widget render="Label" source="feelsliketemp" position="393,189" zPosition="1" size="173,27" font="Replacement; 22" transparent="1" backgroundColor="black" halign="center" />
-  <widget render="Label" source="condition" position="71,245" zPosition="1" size="382,35" font="Replacement; 22" transparent="1" backgroundColor="black" halign="left" valign="center" foregroundColor="grey" />
-  <widget render="Label" source="wind_condition" position="71,289" zPosition="1" size="218,35" font="Replacement; 22" transparent="1" backgroundColor="black" halign="left" valign="center" foregroundColor="grey" />
-  <widget render="Label" source="humidity" position="71,338" zPosition="1" size="218,35" font="Replacement; 22" valign="center" transparent="1" backgroundColor="black" halign="left" foregroundColor="grey" />
-  <widget render="Label" source="weekday2" position="35,434" zPosition="1" size="205,57" halign="center" valign="center" font="Replacement; 20" transparent="1" backgroundColor="black" />
-  <widget name="weekday2_icon" position="78,507" zPosition="1" size="115,80" alphatest="blend" transparent="1" />
-  <widget render="Label" source="weekday2_temp" position="36,603" zPosition="1" size="202,75" halign="center" valign="center" font="Replacement; 20" transparent="1" backgroundColor="black" />
-  <widget render="Label" source="weekday3_temp" position="271,603" zPosition="1" size="202,75" halign="center" valign="center" font="Replacement; 20" transparent="1" backgroundColor="black" />
-  <widget name="weekday3_icon" position="313,507" zPosition="1" size="115,80" alphatest="blend" transparent="1" />
-  <widget render="Label" source="weekday3" position="270,434" zPosition="1" size="205,57" halign="center" valign="center" font="Replacement; 20" transparent="1" backgroundColor="black" />
-  <widget render="Label" source="weekday4_temp" position="500,603" zPosition="1" size="202,75" halign="center" valign="center" font="Replacement; 20" transparent="1" backgroundColor="black" />
-  <widget name="weekday4_icon" position="549,507" zPosition="1" size="115,80" alphatest="blend" transparent="1" />
-  <widget render="Label" source="weekday4" position="499,433" zPosition="1" size="205,57" halign="center" valign="center" font="Replacement; 20" transparent="1" backgroundColor="black" />
-  <widget render="Label" source="statustext" position="235,136" zPosition="0" size="0,465" font="Regular;20" halign="center" valign="center" transparent="1" backgroundColor="background" />
-</screen>
+  <screen name="MSNWeatherPlugin" position="0,0" size="1280,720" title="Weather Plugin" flags="wfNoBorder" backgroundColor="transparent">
+    <ePixmap pixmap="AeonMOD_Adrenalinnrw/weatherback.png" position="0,0" size="1280,720" zPosition="-1" alphatest="on" />
+    <widget render="Label" source="caption" position="66,27" size="573,57" font="Replacement; 30" zPosition="1" transparent="1" backgroundColor="black" foregroundColor="white" halign="left" valign="center" />
+    <widget render="Label" source="observationtime" position="475,383" zPosition="1" size="244,30" font="bold; 18" transparent="1" halign="right" backgroundColor="black" valign="center" foregroundColor="un808888" />
+    <widget render="Label" source="observationpoint" position="65,383" zPosition="1" size="404,30" font="bold; 18" transparent="1" halign="left" backgroundColor="black" valign="center" foregroundColor="un808888" />
+    <widget name="currenticon" position="160,96" zPosition="1" size="175,120" alphatest="blend" transparent="1" />
+    <widget render="Label" source="currentTemp" position="358,96" zPosition="1" size="239,120" font="Replacement; 75" transparent="1" backgroundColor="black" halign="center" valign="top" />
+    <widget render="Label" source="feelsliketemp" position="393,189" zPosition="1" size="173,27" font="Replacement; 22" transparent="1" backgroundColor="black" halign="center" />
+    <widget render="Label" source="condition" position="71,245" zPosition="1" size="382,35" font="Replacement; 22" transparent="1" backgroundColor="black" halign="left" valign="center" foregroundColor="grey" />
+    <widget render="Label" source="wind_condition" position="71,289" zPosition="1" size="218,35" font="Replacement; 22" transparent="1" backgroundColor="black" halign="left" valign="center" foregroundColor="grey" />
+    <widget render="Label" source="humidity" position="71,338" zPosition="1" size="218,35" font="Replacement; 22" valign="center" transparent="1" backgroundColor="black" halign="left" foregroundColor="grey" />
+    <widget render="Label" source="weekday2" position="35,434" zPosition="1" size="205,57" halign="center" valign="center" font="Replacement; 20" transparent="1" backgroundColor="black" />
+    <widget name="weekday2_icon" position="78,507" zPosition="1" size="115,80" alphatest="blend" transparent="1" />
+    <widget render="Label" source="weekday2_temp" position="36,603" zPosition="1" size="202,75" halign="center" valign="center" font="Replacement; 20" transparent="1" backgroundColor="black" />
+    <widget render="Label" source="weekday3_temp" position="271,603" zPosition="1" size="202,75" halign="center" valign="center" font="Replacement; 20" transparent="1" backgroundColor="black" />
+    <widget name="weekday3_icon" position="313,507" zPosition="1" size="115,80" alphatest="blend" transparent="1" />
+    <widget render="Label" source="weekday3" position="270,434" zPosition="1" size="205,57" halign="center" valign="center" font="Replacement; 20" transparent="1" backgroundColor="black" />
+    <widget render="Label" source="weekday4_temp" position="500,603" zPosition="1" size="202,75" halign="center" valign="center" font="Replacement; 20" transparent="1" backgroundColor="black" />
+    <widget name="weekday4_icon" position="549,507" zPosition="1" size="115,80" alphatest="blend" transparent="1" />
+    <widget render="Label" source="weekday4" position="499,433" zPosition="1" size="205,57" halign="center" valign="center" font="Replacement; 20" transparent="1" backgroundColor="black" />
+    <widget render="Label" source="statustext" position="235,136" zPosition="0" size="0,465" font="Regular;20" halign="center" valign="center" transparent="1" backgroundColor="background" />
+  </screen>
 </skin>
